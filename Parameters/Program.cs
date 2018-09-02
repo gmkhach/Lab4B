@@ -12,11 +12,13 @@ namespace Parameters
     {
         static void doWork()
         {
+            // passes i by reference 
             int i = 0;
             Console.WriteLine(i);
             Pass.Value(ref i);
             Console.WriteLine(i);
 
+            // uses the WrappedInt object to accomplish the same
             WrappedInt wi = new WrappedInt();
             Console.WriteLine(wi.number);
             Pass.Reference(wi);
@@ -34,8 +36,5 @@ namespace Parameters
                 Console.WriteLine(ex.Message);
             }
         }
-
-
-
     }
 }
